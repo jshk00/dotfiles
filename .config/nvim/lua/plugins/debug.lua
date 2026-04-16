@@ -12,9 +12,7 @@ return {
 
 		require("dapui").setup()
 		require("dap-go").setup()
-		require("nvim-dap-virtual-text").setup({
-			virt_lines = true,
-		})
+		require("nvim-dap-virtual-text").setup()
 
 		vim.keymap.set("n", "<F1>", dap.continue)
 		vim.keymap.set("n", "<F2>", dap.step_into)

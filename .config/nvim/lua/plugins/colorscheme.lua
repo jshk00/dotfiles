@@ -39,7 +39,7 @@ local catppuccin = {
 	name = "catppuccin",
 	priority = 1000,
 	init = function()
-		vim.cmd.colorscheme("catppuccin")
+		vim.cmd.colorscheme("catppuccin-nvim")
 	end,
 	config = function()
 		require("catppuccin").setup({
@@ -47,7 +47,7 @@ local catppuccin = {
 			term_colors = true,
 			no_bold = true,
 			no_italic = true,
-			flavour = "mocha",
+			flavour = "auto",
 			default_integrations = true,
 			color_overrides = {
 				mocha = {
@@ -78,4 +78,4 @@ local schemes = {
 	onedark = onedark,
 }
 
-return schemes.tokyonight
+return schemes.catppuccin
