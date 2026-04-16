@@ -1,10 +1,10 @@
 return { -- Highlight, edit, and navigate code
 	"nvim-treesitter/nvim-treesitter",
-
+	lazy = false,
 	build = ":TSUpdate",
 
-	opts = {
-		ensure_installed = {
+	config = function()
+		local langs = {
 			"python",
 			"rust",
 			"javascript",
@@ -25,13 +25,15 @@ return { -- Highlight, edit, and navigate code
 			"yaml",
 			"make",
 			"csv",
-		},
-		-- Autoinstall languages that are not installed
-		auto_install = true,
-		highlight = {
-			enable = true,
-			additional_vim_regex_highlighting = { "ruby" },
-		},
-		indent = { enable = true, disable = { "ruby" } },
-	},
+		}
+		require("nvim-treesitter").install(langs)
+		vim.treesitter.language.register("bash", "zsh")
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = langs,
+			callback = function()
+				vim.treesitter.start()
+				vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+			end,
+		})
+	end,
 }

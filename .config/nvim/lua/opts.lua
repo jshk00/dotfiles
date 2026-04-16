@@ -9,6 +9,7 @@ vim.opt.mouse = "a" -- enable mouse mode useful for resizing window in split mod
 vim.opt.showmode = false -- dont show mode as it is already shown in status line
 vim.opt.clipboard = "unnamedplus" -- sync clipboard of neovim and host os
 vim.opt.breakindent = true -- Enable break indent
+vim.opt.swapfile = false
 vim.opt.undofile = true -- save undo history to file
 vim.opt.ignorecase = true -- ignore case sensitive
 vim.opt.smartcase = true -- enable smartcase
@@ -39,3 +40,4 @@ vim.opt.termguicolors = true
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
+vim.opt.fcs = "eob: "
