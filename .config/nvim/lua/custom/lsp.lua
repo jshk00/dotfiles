@@ -21,6 +21,7 @@ local ensure_installed = {
 	"iferr",
 
 	-- servers
+	"zls",
 	"gopls",
 	"yaml-language-server",
 	"json-lsp",
