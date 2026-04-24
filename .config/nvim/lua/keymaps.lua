@@ -42,3 +42,9 @@ vim.keymap.set("v", ">", ">gv", { desc = "indent next keeping in visual mode" })
 -- move test up or down in visual mode
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "indent next keeping in visual mode" })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "indent next keeping in visual mode" })
+
+-- inbuilt undotree
+vim.keymap.set("n", "<leader>u", function()
+	vim.cmd.packadd("nvim.undotree")
+	require("undotree").open()
+end, { desc = "toggle builtin undotree" })
