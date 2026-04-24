@@ -61,8 +61,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 				end)
 			end
 			if client:supports_method(vim.lsp.protocol.Methods.textDocument_codeLens) and vim.lsp.codelens then
-				vim.keymap.set("n", "tc", vim.lsp.codelens.refresh, { silent = true, buffer = args.buf })
-				vim.keymap.set("n", "tcd", vim.lsp.codelens.clear, { silent = true, buffer = args.buf })
+				vim.keymap.set("n", "tc", function()
+					vim.lsp.codelens.enable(true)
+				end, { silent = true, buffer = args.buf })
+				vim.keymap.set("n", "tcd", function()
+					vim.lsp.codelens.enable(false)
+				end, { silent = true, buffer = args.buf })
 			end
 		end
 	end,

@@ -12,7 +12,7 @@ local tokyonight = {
 					fg = c.blue1,
 				}
 			end,
-			style = "night",
+			style = "moon",
 			styles = {
 				comments = { italic = false },
 				keywords = { italic = false },
@@ -47,15 +47,8 @@ local catppuccin = {
 			term_colors = true,
 			no_bold = true,
 			no_italic = true,
-			flavour = "auto",
+			flavour = "mocha",
 			default_integrations = true,
-			color_overrides = {
-				mocha = {
-					base = "#1a1b26",
-					mantle = "#15161e",
-					curst = "#15161e",
-				},
-			},
 		})
 	end,
 }

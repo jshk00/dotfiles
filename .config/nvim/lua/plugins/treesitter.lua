@@ -27,6 +27,9 @@ return { -- Highlight, edit, and navigate code
 			"csv",
 		}
 		require("nvim-treesitter").install(langs)
+		vim.treesitter.language.register("yaml", "yaml.docker-compose")
+		vim.treesitter.language.register("yaml", "yaml.gitlab")
+		vim.treesitter.language.register("yaml", "yaml.helm-values")
 		vim.treesitter.language.register("bash", "zsh")
 		vim.api.nvim_create_autocmd("FileType", {
 			pattern = langs,
