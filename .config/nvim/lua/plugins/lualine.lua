@@ -26,13 +26,16 @@ return {
 							readonly = "󰞇 ",
 						},
 					},
-					{
-						---@diagnostic disable-next-line: undefined-field
-						require("noice").api.status.mode.get,
-						---@diagnostic disable-next-line: undefined-field
-						cond = require("noice").api.status.mode.has,
-						color = { fg = "#ff9e64" },
-					},
+					-- {
+					-- 	function()
+					-- 		local reg = vim.fn.reg_recording()
+					-- 		if reg == "" then
+					-- 			return ""
+					-- 		end
+					-- 		return "recording @" .. reg
+					-- 	end,
+					-- 	color = { fg = "#ff9e64" },
+					-- },
 				},
 				lualine_x = { "encoding", "fileformat", "filetype" },
 				lualine_y = { "filesize" },

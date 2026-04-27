@@ -82,7 +82,7 @@ vim.lsp.config("gopls", {
 	settings = {
 		gopls = {
 			-- exclude uncessary dirs
-			directoryFlags = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
+			directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
 			-- vendor mode has problem with GD in external deps so -mod=mod is required
 			buildFlags = { "-tags=integration unit test pact release mock" },
 			-- completeUnimported = true,
