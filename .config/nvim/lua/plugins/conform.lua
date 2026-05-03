@@ -28,7 +28,7 @@ M.format_go_imports = function(args)
 
 		-- Apply the text edits if any are returned
 		if results then
-			for client, response in pairs(results) do
+			for _, response in pairs(results) do
 				if response.result and #response.result > 0 then
 					for _, action in ipairs(response.result) do
 						if action.edit then
@@ -54,6 +54,9 @@ M.config = {
 				css = { "prettier" },
 				python = { "ruff" },
 				go = { "golangci-lint" },
+				make = { "bake" },
+				sh = { "shfmt" },
+				bash = { "shfmt" },
 			},
 		})
 		vim.api.nvim_create_autocmd("BufWritePre", {

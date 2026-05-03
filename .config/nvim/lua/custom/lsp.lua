@@ -10,6 +10,8 @@ local ensure_installed = {
 	"stylua", -- Used to format Lua code
 	"prettier", -- used to formatter html, css, javascript
 	"ruff", -- used to format python code
+	"shfmt", -- used to format bash, sh code
+	"mbake", -- used to format makefile
 
 	-- debuggers
 	"delve",
