@@ -1,6 +1,6 @@
 FSTYPE=$(findmnt -n -o FSTYPE /)
 if [ "$FSTYPE" != "ext4" ]; then
-	return
+  return
 fi
 
 # Get the device mounted as root
@@ -22,6 +22,6 @@ fi
 cp /etc/fstab /etc/fstab.bak.$(date +%s)
 
 # Replace the line that has our uuid
-sed -i "s|^UUID=$UUID .*|UUID=$UUID / ext4 noatime,data=journal,journal_async_commit,fast_commit,commit=60 0 1|" /etc/fstab
+sed -i "s|^UUID=$UUID .*|UUID=$UUID / ext4 defaults,noatime,lazytime,commit=60 0 1|" /etc/fstab
 
 echo "✅ /etc/fstab updated with optimized root mount options."
