@@ -12,7 +12,7 @@ local tokyonight = {
 					fg = c.blue1,
 				}
 			end,
-			style = "night",
+			style = "moon",
 			styles = {
 				comments = { italic = false },
 				keywords = { italic = false },
@@ -44,7 +44,7 @@ local catppuccin = {
 	config = function()
 		require("catppuccin").setup({
 			transparent_background = false,
-			term_colors = true,
+			term_colors = false,
 			no_bold = true,
 			no_italic = true,
 			flavour = "mocha",
@@ -64,11 +64,35 @@ local gruvbox = {
 	end,
 }
 
+local kanagawa = {
+	"rebelot/kanagawa.nvim",
+	lazy = false,
+	priority = 1000,
+	init = function()
+		vim.cmd.colorscheme("kanagawa")
+	end,
+	config = function()
+		require("kanagawa").setup({
+			compile = false, -- enable compiling the colorscheme
+			undercurl = true, -- enable undercurls
+			commentStyle = { italic = false },
+			functionStyle = { italic = false },
+			keywordStyle = { italic = false },
+			statementStyle = { bold = false },
+			transparent = false, -- do not set background color
+			dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+			terminalColors = true, -- define vim.g.terminal_color_{0,17}
+			theme = "wave", -- Load "wave" theme
+		})
+	end,
+}
+
 local schemes = {
 	tokyonight = tokyonight,
 	gruvbox = gruvbox,
 	catppuccin = catppuccin,
 	onedark = onedark,
+	kanagawa = kanagawa,
 }
 
-return schemes.tokyonight
+return schemes.catppuccin
