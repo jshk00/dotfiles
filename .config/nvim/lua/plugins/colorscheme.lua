@@ -12,7 +12,7 @@ local tokyonight = {
 					fg = c.blue1,
 				}
 			end,
-			style = "moon",
+			style = "night",
 			styles = {
 				comments = { italic = false },
 				keywords = { italic = false },
