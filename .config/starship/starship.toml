@@ -145,7 +145,7 @@ format = '[$symbol( $version) ]($style)'
 [python]
 symbol = ""
 style = "fg:lavendar"
-format = '[$symbol( $version) ]($style)'
+format = '[$symbol( $version) (\($virtualenv\)) ]($style)'
 
 [lua]
 symbol = " "
