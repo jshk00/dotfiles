@@ -91,8 +91,8 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias kc="kubectl"
-alias kd="kind"
+alias k="kubectl"
+alias kc="kubectx"
 alias zshconfig="nvim ~/.zshrc"
 alias sudo="sudo "
 alias ls="lsd"
@@ -109,6 +109,22 @@ alias update="sudo pacman -Syyu && paru -Syu -a --skipreview --removemake --clea
 alias ipv4="ip addr | grep inet | grep -vE '127.0.0.1|inet6|docker0' | awk '{print \$2}' | sed 's|/24||'"
 alias pgadmin4="nohup $HOME/.pgadmin4/bin/pgadmin4 > /dev/null 2>&1 &"
 alias wperf="sudo iwconfig wlan0 power off"
+
+mp3yt() {
+  yt-dlp \
+    --no-playlist \
+    -f bestaudio \
+    --extract-audio \
+    --audio-format mp3 \
+    --audio-quality 320K \
+    --embed-thumbnail \
+    --embed-metadata \
+    --add-metadata \
+    --sponsorblock-remove intro,outro,selfpromo,sponsor,interaction,music_offtopic \
+	-o '%(title)s.%(ext)s' \
+    "$1"
+}
+
 
 # Shell integrations
 eval "$(fzf --zsh)"

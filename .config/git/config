@@ -2,9 +2,6 @@
 	name = Jayesh Kale
 	email = jayesh6297@gmail.com
 
-[credential]
-	helper = libsecret
-
 [pull]
 	rebase = true
 
@@ -18,8 +15,8 @@
 [interactive]
 	diffFilter = delta --color-only
 
-[url "https://github.com/"]
-	insteadOf = git@github.com:
+[url "ssh://git@github.com"]
+	insteadOf = https://github.com
 
 [init]
 	defaultBranch = main
