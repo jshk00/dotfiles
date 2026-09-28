@@ -24,11 +24,12 @@ return {
 				["ui-select"] = { require("telescope.themes").get_dropdown() },
 			},
 			defaults = {
-				path_display = { "smart" },
+				sort_lastused = false,
+				path_display = { "filename_first" },
 				selection_caret = " ",
 				prompt_prefix = " ",
 				layout_strategy = "horizontal_fused",
-				layout_config = { width = 0.87, height = 0.8, horizontal = { preview_width = 0.55 } },
+				layout_config = { width = 0.90, height = 0.8, horizontal = { preview_width = 0.55 } },
 				file_ignore_patterns = {
 					"/%s.git/",
 					"vendor",
@@ -56,7 +57,9 @@ return {
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags)
 		vim.keymap.set("n", "<leader>fk", builtin.keymaps)
-		vim.keymap.set("n", "<leader>ff", builtin.find_files)
+		vim.keymap.set("n", "<leader>ff", function()
+			builtin.find_files({ previewer = false })
+		end)
 		vim.keymap.set("n", "<leader>ft", builtin.git_files)
 		vim.keymap.set("n", "<leader>fw", builtin.grep_string)
 		vim.keymap.set("n", "<leader>fg", builtin.live_grep)
