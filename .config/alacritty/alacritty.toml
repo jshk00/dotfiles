@@ -4,6 +4,8 @@ dynamic_title = false
 [font]
 # normal = { family = "JetBrainsMono NF Light" }
 # size = 13
+# normal = { family = "JetBrainsMono NF ExtraLight" }
+# size = 13
 # normal = { family = "Fira Code Light" }
 # size = 13
 normal = { family = "Berkeley Mono SemiLight" }

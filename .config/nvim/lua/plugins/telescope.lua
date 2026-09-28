@@ -24,6 +24,7 @@ return {
 				["ui-select"] = { require("telescope.themes").get_dropdown() },
 			},
 			defaults = {
+				path_display = { "smart" },
 				selection_caret = " ",
 				prompt_prefix = " ",
 				layout_strategy = "horizontal_fused",

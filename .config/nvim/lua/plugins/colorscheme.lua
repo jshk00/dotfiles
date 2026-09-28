@@ -95,4 +95,4 @@ local schemes = {
 	kanagawa = kanagawa,
 }
 
-return schemes.catppuccin
+return schemes.tokyonight
